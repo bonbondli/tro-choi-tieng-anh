@@ -1,0 +1,6 @@
+{
+  "name": "Giải Mã Ô Chữ Tiếng Anh",
+  "description": "Trò chơi giải mã ô chữ tương tác học từ vựng Tiếng Anh sinh động, trực quan dành cho học sinh THCS với bento-grid, hệ thống điểm và huy hiệu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
