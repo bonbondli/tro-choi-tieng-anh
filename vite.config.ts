@@ -1,27 +1,25 @@
-import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig(({ mode }) => { 
-  const env = loadEnv(mode, '.', '');
-  return { 
-    // 👇 BẮT BUỘC: Thêm dòng base này và thay 'ten-repo-cua-ban' thành repo của bạn
-    base: '/tro-choi-tieng-anh/',
-    plugins: [react(), tailwindcss()],
-    define: { 
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-    },
-    // ... giữ nguyên các dòng cấu hình khác bên dưới
-    server: {
+
+export default defineConfig(({ mode }) => {
+    
+    const env = loadEnv(mode, '.', '');
+    return {
+      base: '/tro-choi-tieng-anh/',
+      server: {
         port: 3000,
         host: '0.0.0.0',
       },
-      
+      plugins: [],
+      define: {
+        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+      },
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
       }
-  };
+    };
 });
